@@ -2,7 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime> 
-#include <windows.h> 
+
 
 using namespace std;
 
@@ -16,9 +16,7 @@ void question(int v)
 
 int main()
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    setlocale(LC_ALL, "Russian");
+   
     string yn;
     int k;
 
