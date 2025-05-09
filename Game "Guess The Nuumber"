@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime> 
+#include <windows.h> 
+
+using namespace std;
+
+void question(int v)
+{
+    cout << "try again,  loser"<<endl;
+    cin >> v;
+    system("cls"); 
+    cout << "your number: " << v << endl;
+}
+
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    setlocale(LC_ALL, "Russian");
+    string yn;
+    int k;
+
+    cout << "Number guesser, wanna start? (y/n)? ";
+    cin >> yn;
+
+    if (yn == "n")
+    {
+        return 0;
+    }
+
+    cout << "Robot thinks about some number? try to guess it!\n";
+    cin >> k;
+   
+    cout << "your number: " << k << endl;
+
+    srand(time(0));
+    int r = (rand() % 100 + 1);
+
+ 
+    while (k != r)
+    {
+        if (k < r)
+        {
+            
+            cout << "hint: bigger" << endl;
+        }
+        else
+        {
+        
+            cout << "hint: smaller" << endl;
+        }
+
+        question(k);
+    }
+
+    cout << "Congrats! You guess it!" << endl;
+
+    return 0;
+}
